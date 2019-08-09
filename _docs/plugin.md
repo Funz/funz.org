@@ -57,7 +57,7 @@ z= ...
     commentLineChar=#
     ```
 5. Rename and adapt the shell script to launch the code __'src/main/scripts/MyPlugin.sh'__ and/or __'src/main/scripts/MyPlugin.bat'__,
-6. Provide (at least) one test case in __'src/test/cases/MyTestCase.in/'__, containing all input files of this test case, including the main file which is passed as argument to the '.sh' script:
+6. Provide (at least) one __non-parametric__ test case in __'src/test/cases/MyTestCase.in/'__, containing all input files of this test case (without any parameter), including the main file which is passed as first argument to the '.sh' script:
   * then, launch the simulation on all test cases (one in each 'src/test/cases/' subdirectory)
         - possibly by calling `ant run-reference-cases` (which will use the previous script),
   * so that once finished, all directories 'src/test/cases/MyTestCase.in/' will contain these files & dirs:
