@@ -8,7 +8,7 @@ permalink: /docs/algorithm/
 Funz 'algorithm' is the component that features funz to interact with an algorithm implementation, to drive an external simulation software.
 It mainly provides some methods in [R](http://www.r-project.org) language to define numerical simulations to perform, and returns information about engineering target.
 
-[![algorithm cheatsheet]({{ site.baseurl }}/Algorithm.png){:width="400}]({{ site.baseurl }}/Algorithm.png)
+[![algorithm cheatsheet]({{ site.baseurl }}/docs/Algorithm.png){:width="400}]({{ site.baseurl }}/docs/Algorithm.png)
 
 
 For conveniency, a [basic template](https://github.com/Funz/algorithm-template) is provided and should be used as a scratch project.
