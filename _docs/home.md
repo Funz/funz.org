@@ -1,5 +1,5 @@
 ---
-title: Intro
+title: Funz
 permalink: /docs/home/
 redirect_from: /docs/index.html
 ---

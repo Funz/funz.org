@@ -1,7 +1,3 @@
-- title: Funz
-  docs:
-  - home
-
 - title: Demo
   docs:
   - demo
@@ -12,7 +8,6 @@
 
 - title: User guide
   docs:
-  - home
   - usage
   - plugin
   - algorithm
