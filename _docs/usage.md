@@ -14,4 +14,4 @@ Each of these interfaces have its own requirements, in addition to Java required
 
 As a short reminder of available commands, you can use the following cheatsheet:
 
-![Usage cheatsheet](usage_cheatsheet.png){:width=400px}
+![Usage cheatsheet](Clients.png){:width=400px}

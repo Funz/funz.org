@@ -88,6 +88,3 @@ output.z=7.89
     so that this test case is now complete.
 8. Check all test cases using `ant test`, which returns a json report, and should __not__ finished by `FAILED`
 9. Provide some sample case files in __'src/main/samples/OneSample.in'__.
-
-
-### Integration & Distribution

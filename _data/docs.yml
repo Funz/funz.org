@@ -5,11 +5,9 @@
   - usage
   - plugin
   - algorithm
-  - package
   
 - title: Reference
   docs:
   - io_parser
   - design_of_experiments
-  - network_protocol
-  - filesystem_storage
+
