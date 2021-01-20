@@ -9,13 +9,13 @@ As a starting point, Funz is the integration of some __numerical engineering too
 * a pre-compilation engine:
   * __parsing/replacing__ __variables__ for your simulation input files (eg. search '$x' everywhere and replace by an arbitrary numerical value),
   * parsing/replacing variables __formula__ (eg. once '$x' i replaced, evaluate and replace '@{$x +1}' also),
-    ![parameters cheatsheet](ParameterizingInputFiles.png){:width=200px}
+    ![parameters cheatsheet]({{ site.baseurl }}/docs/ParameterizingInputFiles.png){:width=200px}
 * a loop to __pre-compile__ different arbitrary values of '$x',
 * a network protocol to __send/receive__ pre-compiled __input files__ on remote __calculation servers__,
 * an output file parser to __extract interest values__,
-    ![computing cheatsheet](Computing.png){:width=200px}
+    ![computing cheatsheet]({{ site.baseurl }}/docs/Computing.png){:width=200px}
 * a driver to set up arbitrary values of '$x', possibly coming from a __"design of experiments"__ algorithm (optimization, inversion, sensitivity analysis, ...).
-    ![algorithm cheatsheet](Algorithm.png){:width=200px}
+    ![algorithm cheatsheet]({{ site.baseurl }}/docs/Algorithm.png){:width=200px}
 
 ## Integrated simulation software (plugins)
 

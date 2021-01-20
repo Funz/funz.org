@@ -1,5 +1,5 @@
 ---
-title: Install
+title: Manual install
 permalink: /docs/install/
 ---
 

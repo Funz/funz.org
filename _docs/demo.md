@@ -1,5 +1,5 @@
 ---
-title: Demo
+title: OpenModelica demo
 permalink: /docs/demo/
 ---
 

@@ -1,7 +1,11 @@
 - title: Demo
+  docs:
+  - demo
 
 - title: Installation
-
+  docs:
+  - install
+  
 - title: User guide
   docs:
   - usage
