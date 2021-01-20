@@ -1,5 +1,5 @@
 ---
-title: Getting Started
+title: User guide
 permalink: /docs/home/
 redirect_from: /docs/index.html
 ---
@@ -38,7 +38,7 @@ Simulation softwares are coupled in Funz through __plugins__. Following are avai
 
 Design of experiments "drivers" are integrated in Funz as standardized '.R' files by GdR MASCOT-NUM. Following are available:
 
-* [Brent](https://github.com/algorithm-Brent) root finding
-* [GradientDescent](https://github.com/algorithm-GradientDescent) local optimization
-* [EGO](https://github.com/algorithm-EGO) global optimization
+* [Brent](https://github.com/Funz/algorithm-Brent) root finding
+* [GradientDescent](https://github.com/Funz/algorithm-GradientDescent) local optimization
+* [EGO](https://github.com/Funz/algorithm-EGO) global optimization
 

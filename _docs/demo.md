@@ -79,12 +79,7 @@ and returns:
 
 Now we will ask a (quite simple) algorithm to find the `convection` value leading to `min(T) = 0.3` (with relative precision of 0.01 on `convection` value):
 ```bash
-./Funz.sh Run       -m Modelica -if samples/NewtonCooling.mo.par -iv convection=0.5,0.6,0.7,0.8,0.9,1.0 -oe "min(T)" -v 0 -pf "convection" "min(T)" "info"
 ./Funz.sh RunDesign -m Modelica -if samples/NewtonCooling.mo.par -iv convection=[0.5,1.0] -oe "min(T)" -d Brent -do ytarget=25.2 ytol=0.01 -v 0
-```
-which returns:
-```
-
 ```
 
 
