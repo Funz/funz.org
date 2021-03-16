@@ -21,11 +21,12 @@ You can get 'Funz-*.zip' archive of whole working Funz directory, unzip and just
 If you prefer a custom installation, you can 
 
 * start with a quite-scratch distributions:
-  * for Windows: [cmd.exe](https://github.com/Funz/plugin-Cmd.exe/releases/latest)
-  * for Linux & OSX: [bash](https://github.com/Funz/plugin-Bash/releases/latest)
-* then add all required plugins:
-  * get 'plugin-*.zip' file in previous releases
-  * put and unzip in'Funz/plugins/io' directory
-* and add all required algorithms:
-  * get 'algorithms-*.zip' file in previous releases
-  * put and unzip in'Funz/plugins/doe' directory
+  * e.g. for Windows: [cmd.exe](https://github.com/Funz/plugin-Cmd.exe/releases/latest)
+  * e.g. for Linux & OSX: [bash](https://github.com/Funz/plugin-Bash/releases/latest)
+* test that it works properly with example files (available in 'samples' directory)
+* then add some other plugins you need:
+  * get 'plugin-*.zip' file in any of the previous GH releases
+  * unzip in 'Funz/plugins/io' directory
+* add some algorithms you need:
+  * get 'algorithms-*.zip' file in any of the previous GH releases
+  * unzip in 'Funz/plugins/doe' directory
