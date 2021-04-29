@@ -3,10 +3,10 @@ title: Funz
 email: yann.richet@irsn.fr
 description: Funz project website.
 
-baseurl: "/doc" # the subpath of your site, e.g. /blog/
-url: https://Funz.github.io/doc # the base hostname & protocol for your site
-git_address: https://github.com/Funz
-git_edit_address: https://github.com/Funz/doc/edit/master
+baseurl: "/" # the subpath of your site, e.g. /blog/
+url: https://Funz.github.io/ # the base hostname & protocol for your site
+git_address: https://github.com/Funz/funz.github.io
+git_edit_address: https://github.com/Funz/funz.github.io/edit/master
 
 # theme options from https://bootswatch.com/
 # comment out this to use default Bootstrap
