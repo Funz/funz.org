@@ -48,27 +48,27 @@ layout: default
                   {% highlight bash %}Funz.sh RunDesign -m OpenModelica -if NewtonCooling.mo -iv convection=[0.5,1.0] -oe "min(T)" -d Brent -do ytarget=25.5{% endhighlight %}</li>
                
                 <li>Build a <strong>response surface</strong> of MySimulator for <code>x1</code> in <code>[-5,5]</code> and <code>x2</code> in <code>[-5,5]</code>:
-                  {% highlight python %}runFile("Funz.py")
-Funz_init()
+                  {% highlight python %}# pip install Funz
+import Funz
 X = {'x1':np.arange(-5, 5, 0.25),'x2':np.arange(-5, 5, 0.25)}
-y = Funz_Run(model="MySimulator",input_files=["inputfile1","inputfile2"],input_variables= X ,all_combinations=True)['y']
+y = Funz.Run(model="MySimulator",input_files=["inputfile1","inputfile2"],input_variables= X ,all_combinations=True)['y']
 # mplt.plot_surface(X['x1'], X['x2'], y){% endhighlight %}</li>
               
                 <li>Propagate <code>x1</code> as uniform random and <code>x2</code> as normal random <strong>uncertainties</strong> through MySimulator:
-                  {% highlight r %}source("Funz.R")
-Funz.init()
-hist( Funz.Run(model="MySimulator",input.files=c("inputfile1","inputfile2"),input.variables= list(x1=runif(100),x2=rnorm(100)) )['y'] ){% endhighlight %}</li>
+                  {% highlight r %}# devtools::install_github("Funz/Funz.R")
+library(Funz)
+hist( Funz::Run(model="MySimulator",input.files=c("inputfile1","inputfile2"),input.variables= list(x1=runif(100),x2=rnorm(100)) )['y'] ){% endhighlight %}</li>
        
                 <li><strong>Chain</strong> simulations:
-                  {% highlight python %}runFile("Funz.py")
-Funz_init()
+                  {% highlight python %}# pip install Funz
+import Funz
 X = {'x1':..., 'x2':...}
 # first simulator, inputfile1 and inputfile2 contain 'x1' and 'x2' variables
-y1 = Funz_Run(model="MySimulator1",input_files=["inputfile1","inputfile2"],input_variables= X)['y']
+y1 = Funz.Run(model="MySimulator1",input_files=["inputfile1","inputfile2"],input_variables= X)['y']
 # second simulator, depends on results of first one also, inputfile3 contains 'x1', 'x2' and 'y1' variables
-y2 = Funz_Run(model="MySimulator2",input_files=["inputfile3"],input_variables= X.update(y1))['z']
+y2 = Funz.Run(model="MySimulator2",input_files=["inputfile3"],input_variables= X.update(y1))['z']
 # post-processing in Excel (postrpro.xlsx sheet contains cells commented by '$x1' or '$x2'), returns cell value commented as "=result"
-result  = Funz_Run(model="Excel",input_files=["postpro.xlsx"],input_variables= X.update(y2))['result']{% endhighlight %}</li>
+result  = Funz.Run(model="Excel",input_files=["postpro.xlsx"],input_variables= X.update(y2))['result']{% endhighlight %}</li>
       
         <li>Identify the <strong>most influent input</strong> parameters</li>
      

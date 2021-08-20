@@ -11,6 +11,15 @@ permalink: /docs/usage_python/
 
 ### Loading Funz
 
+#### Using a (pip) module
+
+Once Funz is installed form Python ('pip install Funz'), then just load module using:
+```python
+import Funz
+```
+
+#### Using pre-installed Funz
+
 You need to load Funz with dedicated scipt: `python3 -i /opt/Funz/Funz.py` or load it interactively: 
 ```python
 exec(open("/opt/Funz/Funz.py").read())
@@ -54,8 +63,6 @@ Funz 1.9 <build 27/03/2019 15:05>
 Main features & functions:
   * to run external parametric calculations of simulator `model` with input files `input_files`: `Funz_Run()` with following arguments: 
 ```python
-runFile("Funz.py")
-Funz_init()
 Funz_Run(model,input_files)
 ```
 ```python

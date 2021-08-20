@@ -1,7 +1,22 @@
 ---
-title: Manual install
+title: Installation
 permalink: /docs/install/
 ---
+
+### Package manager
+
+Installation from following package managers is supported:
+
+* Python: {% highlight bash %}pip install Funz{% endhighlight %}
+* R/devtools: {% highlight r %}devtools::install_github("Funz/Funz.R"){% endhighlight %}
+
+Then you can install more models & algorithms using:
+
+* Python: {% highlight python %}Funz.installModel("Modelica"){% endhighlight %}/{% highlight python %}Funz.installDesign("gradientDescent"){% endhighlight %}
+* R/devtools: {% highlight r %}Funz::install.Model("Modelica"){% endhighlight %}/{% highlight r %}Funz::install.Design("GradientDescent"){% endhighlight %}
+
+
+### Manual install
 
 For conveniency, many integrated packages are available, bundled with plugins and algorithms in GH releases:
 
