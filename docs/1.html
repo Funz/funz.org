@@ -1,0 +1,152 @@
+---
+layout: default
+---
+
+<div class="header-container jumbotron">
+    <div class="container">
+        <h1>Standardize your simulation as a function.</h1>
+        <p><i><b>Funz</b></i> is a parametric & parallel remote execution engine to wrap scientific computing as a function.
+            <br/>Then, just use it as an objective function for any standard algorithm (eg. optimization).
+            <br/>Funz is available for <b>Windows</b>, <b>Mac OS</b>, <b>Linux</b>, through command-line (<b>Bash</b>, <b>Cmd.exe</b>), <b>Python</b>, <b>R</b>.
+        </p>
+    </div>
+</div>
+
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-9">
+            <h2 class="header-light regular-pad">TL;DR</h2>
+            <h3>Parametric scientific computing ?</h3>
+            <blockquote>
+              <p>
+              <ol>
+                <li>Take a "parametrized" input file (contains <code>$x</code>, <code>$y</code>,... replacing some numerical values),</li>
+                <li>Define values taken by these parameter (or let a dedicated algorithm do),</li>
+                <li>Run calculations on remote ressources,</li>
+                <li>Parse results & analyse.</li>
+              </ol>
+              Funz eases this "functional" wrapping of your simulation.
+              </p>
+            </blockquote>
+        </div>
+        <div class="col-md-3 text-center">
+            <img src="img/logo.png" alt="" class="img-responsive">
+        </div>    
+        <div class="col-md-12">
+            <h3>Examples ?</h3>
+            <blockquote>
+              Funz makes your simulations callable as functions for any of <strong>cmd.exe</strong> / <strong>bash</strong> / <strong>python</strong> / <strong>R</strong> / <strong>Java</strong>:
+              <br/>
+              <ul>
+               
+                <li>From <strong>Excel</strong> spreadsheet "sheet.xlsx", get <strong>cell commented with "=total"</strong> for each 10 different values of <strong>cell commented with "$income"</strong>:
+                  {% highlight bash %}Funz.bat Run -m Excel -if sheet.xlsx -iv income=10,20,30,35,40,42,45,47,50,52 -oe total{% endhighlight %}</li>
+               
+                <li>Search <strong>convection coefficient</strong> which leads to a minimal temperature of <strong>25.5</strong> degrees with <strong>OpenModelica</strong> PDE solver:
+                  {% highlight bash %}Funz.sh RunDesign -m OpenModelica -if NewtonCooling.mo -iv convection=[0.5,1.0] -oe "min(T)" -d Brent -do ytarget=25.5{% endhighlight %}</li>
+               
+                <li>Build a <strong>response surface</strong> of MySimulator for <code>x1</code> in <code>[-5,5]</code> and <code>x2</code> in <code>[-5,5]</code>:
+                  {% highlight python %}# pip install Funz
+import Funz
+X = {'x1':np.arange(-5, 5, 0.25),'x2':np.arange(-5, 5, 0.25)}
+y = Funz.Run(model="MySimulator",input_files=["inputfile1","inputfile2"],input_variables= X ,all_combinations=True)['y']
+# mplt.plot_surface(X['x1'], X['x2'], y){% endhighlight %}</li>
+              
+                <li>Propagate <code>x1</code> as uniform random and <code>x2</code> as normal random <strong>uncertainties</strong> through MySimulator:
+                  {% highlight r %}# devtools::install_github("Funz/Funz.R")
+library(Funz)
+hist( Funz::Run(model="MySimulator",input.files=c("inputfile1","inputfile2"),input.variables= list(x1=runif(100),x2=rnorm(100)) )['y'] ){% endhighlight %}</li>
+       
+                <li><strong>Chain</strong> simulations:
+                  {% highlight python %}# pip install Funz
+import Funz
+X = {'x1':..., 'x2':...}
+# first simulator, inputfile1 and inputfile2 contain 'x1' and 'x2' variables
+y1 = Funz.Run(model="MySimulator1",input_files=["inputfile1","inputfile2"],input_variables= X)['y']
+# second simulator, depends on results of first one also, inputfile3 contains 'x1', 'x2' and 'y1' variables
+y2 = Funz.Run(model="MySimulator2",input_files=["inputfile3"],input_variables= X.update(y1))['z']
+# post-processing in Excel (postrpro.xlsx sheet contains cells commented by '$x1' or '$x2'), returns cell value commented as "=result"
+result  = Funz.Run(model="Excel",input_files=["postpro.xlsx"],input_variables= X.update(y2))['result']{% endhighlight %}</li>
+      
+        <li>Identify the <strong>most influent input</strong> parameters</li>
+     
+        <li><strong>Max/minimize</strong> simulation output value</li>
+     
+        <li>Build <strong>inverse</strong> model</li>
+     
+              </ul>
+            </blockquote>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <h2 class="header-light regular-pad">Overview</h2>
+        <div class="col-sm-4">
+            <h1 class="text-center"><i class="fa fa-gift" aria-hidden="true"></i></h1>
+            <h3 class="text-center">Wrapping</h3>
+            <p>
+              <ul>
+                <li>A standardized <strong>execution script</strong> (properly exiting when calcualtion failed),</li>
+                <li>A set of <strong>reserved characters</strong> (like '$') for input files parametrization,</li>
+                <li>Some <strong>regular expression</strong> to extract output values of interest.</li>
+              </ul>
+            </p>
+        </div>
+        <div class="col-sm-4">
+            <h1 class="text-center"><i class="fa fa-cogs" aria-hidden="true"></i></h1>
+            <h3 class="text-center">Features</h3>
+            <p>
+              <ol>
+                <li>Parse & compile <strong>input files</strong> with given parametric syntax,</li>
+                <li>Launch <strong>remote execution</strong> of each input combination given (async on dedicated TCP channel),</li>
+                <li>Call <strong>external algorithm</strong> to drive calculation parameters values,</li>
+                <li>Monitor & restart failed calculations (blacklisting unsuitable computers),</li>
+                <li>Store & parse <strong>output results</strong>.</li>
+              </ol>
+            </p>
+        </div>
+        <div class="col-sm-4">
+            <h1 class="text-center"><i class="fa fa-code-fork" aria-hidden="true"></i></h1>
+            <h3 class="text-center">Extensibility</h3>
+            <p>
+             <ul>
+                <li>Wrapper for any <strong>simulation software</strong> (holds I/O files, ASCII & common formats: HDF5 NetCDF XML JSON),</li>
+                <li>Algorithm for <strong>design of experiments</strong> (supports definition of input values regarding engineering objective).</li>
+             </ul>
+            </p>
+        </div>
+    </div>
+
+        <hr>
+
+    <div class="row">
+        <h2 class="header-light regular-pad">In depth</h2>
+        <br/>
+        <div class="col-sm-4 text-center">
+            <a class="btn btn-primary btn-lg" href="{{ "/allposts" | prepend: site.baseurl }}" role="button">blog & examples</a>
+        </div>
+         <div class="col-sm-4 text-center">
+            <a class="btn btn-primary btn-lg" href="{{ "/docs/home/" | prepend: site.baseurl }}" role="button">doc & reference</a>
+        </div>
+        <div class="col-sm-4 text-center">
+            <a class="btn btn-primary btn-lg" href="https://github.com/Funz" role="button">Repository</a>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="col-md-3">
+            <img src="img/logo_Irsn.png" alt="" class="img-responsive">
+        </div>
+        <div class="col-md-9">
+            <h2 class="header-light regular-pad">Who we are ?</h2>
+            Early versions of Funz project were funded by <a href="https://www.irsn.fr/EN">IRSN</a> (French institute for radiological protection and nuclear safety). <br/>IRSN open-sourced Funz in 2019 to support safety and design engineering community.
+        </div>
+    </div>
+
+</div>

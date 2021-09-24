@@ -32,12 +32,14 @@ Simulation softwares are coupled in Funz through __plugins__. Following are avai
 * [Scale](https://github.com/Funz/plugin-Scale)
 * [Cristal](https://github.com/Funz/plugin-Cristal)
 * [Telemac](https://github.com/Funz/plugin-Telemac)
+* [and more... on GitHub repository](https://github.com/Funz/)
 
-## Integrated design of experiments (algorithms)
+## Integrated design of experiments (algorithms)c
 
 Design of experiments "drivers" are integrated in Funz as standardized '.R' files by GdR MASCOT-NUM. Following are available:
 
 * [Brent](https://github.com/Funz/algorithm-Brent) root finding
 * [GradientDescent](https://github.com/Funz/algorithm-GradientDescent) local optimization
 * [EGO](https://github.com/Funz/algorithm-EGO) global optimization
+* [and more... on GitHub repository](https://github.com/Funz/)
 
