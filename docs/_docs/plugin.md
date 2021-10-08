@@ -1,11 +1,11 @@
 ---
-title: Plugin
+title: Model plugin
 permalink: /docs/plugin/
 ---
 
 ## Overview
 
-Funz 'plugin' is the component that features funz to interact with all external simulation software.
+Funz model 'plugin' is the component that features funz to interact with all external simulation software.
 It mainly provides input/output parsing and launch scripts, but can also (optionally) provides a way to follow simulations progress, failover support, ...
 
 For convenience, a [basic template](https://github.com/Funz/plugin-template) is provided and should be used as a scratch project.

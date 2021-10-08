@@ -1,11 +1,11 @@
 ---
-title: Algorithm
+title: Design algorithm
 permalink: /docs/algorithm/
 ---
 
 ## Overview
 
-Funz 'algorithm' is the component that features funz to interact with an algorithm implementation, to drive an external simulation software.
+Funz design 'algorithm' is the component that features funz to drive an external simulation software for an engineering objective.
 It mainly provides some methods in [R](http://www.r-project.org) language to define numerical simulations to perform, and returns information about engineering target.
 
 [![algorithm cheatsheet]({{ site.baseurl }}/docs/Algorithm.png){:width="400}]({{ site.baseurl }}/docs/Algorithm.png)
