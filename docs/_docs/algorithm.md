@@ -12,11 +12,11 @@ It mainly provides some methods in [R](http://www.r-project.org) language to def
 
 For now, following are available out-of-the-box:
 
-* [![Funz-Brent](https://github.com/Funz/algorithm-Brent/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/algorithm-Brent/)
-* [![Funz-EGO](https://github.com/Funz/algorithm-EGO/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/algorithm-EGO/)
-* [![Funz-GradientDescent](https://github.com/Funz/algorithm-GradientDescent/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/algorithm-GradientDescent/)
-* [![Funz-PSO](https://github.com/Funz/algorithm-PSO/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/algorithm-PSO/)
-* [![Funz-RandomSampling](https://github.com/Funz/algorithm-RandomSampling/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/algorithm-RandomSampling/)
+* Funz-Brent [![Funz-Brent](https://github.com/Funz/algorithm-Brent/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/algorithm-Brent/)
+* Funz-EGO [![Funz-EGO](https://github.com/Funz/algorithm-EGO/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/algorithm-EGO/)
+* Funz-GradientDescent [![Funz-GradientDescent](https://github.com/Funz/algorithm-GradientDescent/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/algorithm-GradientDescent/)
+* Funz-PSO [![Funz-PSO](https://github.com/Funz/algorithm-PSO/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/algorithm-PSO/)
+* Funz-RandomSampling [![Funz-RandomSampling](https://github.com/Funz/algorithm-RandomSampling/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/algorithm-RandomSampling/)
 
 For conveniency, a [basic template](https://github.com/Funz/algorithm-template) is provided and should be used as a scratch project.
 

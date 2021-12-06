@@ -10,19 +10,19 @@ It mainly provides input/output parsing and launch scripts, but can also (option
 
 For now, following are available out-of-the-box:
 
-* [![Funz-Bash](https://github.com/Funz/plugin-Bash/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Bash/)
-* [![Funz-Cast3m](https://github.com/Funz/plugin-Cast3m/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Cast3m/)
-* [![Funz-Cmd.exe](https://github.com/Funz/plugin-Cmd.exe/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Cmd.exe/)
-* [![Funz-Cristal](https://github.com/Funz/plugin-Cristal/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Cristal/)
-* [![Funz-Excel](https://github.com/Funz/plugin-Excel/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Excel/)
-* [![Funz-MCNP](https://github.com/Funz/plugin-MCNP/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-MCNP/)
-* [![Funz-Modelica](https://github.com/Funz/plugin-Modelica/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Modelica/)
-* [![Funz-Moret](https://github.com/Funz/plugin-Moret/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Moret/)
-* [![Funz-Python](https://github.com/Funz/plugin-Python/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Python/)
-* [![Funz-R](https://github.com/Funz/plugin-R/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-R/)
-* [![Funz-Scale](https://github.com/Funz/plugin-Scale/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Scale/)
-* [![Funz-Telemac](https://github.com/Funz/plugin-Telemac/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Telemac/)
-* [![Funz-VBS](https://github.com/Funz/plugin-VBS/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-VBS/)
+* Funz-Bash [![Funz-Bash](https://github.com/Funz/plugin-Bash/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Bash/)
+* Funz-Cast3m [![Funz-Cast3m](https://github.com/Funz/plugin-Cast3m/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Cast3m/)
+* Funz-Cmd.exe [![Funz-Cmd.exe](https://github.com/Funz/plugin-Cmd.exe/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Cmd.exe/)
+* Funz-Cristal [![Funz-Cristal](https://github.com/Funz/plugin-Cristal/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Cristal/)
+* Funz-Excel [![Funz-Excel](https://github.com/Funz/plugin-Excel/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Excel/)
+* Funz-MCNP [![Funz-MCNP](https://github.com/Funz/plugin-MCNP/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-MCNP/)
+* Funz-Modelica [![Funz-Modelica](https://github.com/Funz/plugin-Modelica/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Modelica/)
+* Funz-Moret [![Funz-Moret](https://github.com/Funz/plugin-Moret/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Moret/)
+* Funz-Python [![Funz-Python](https://github.com/Funz/plugin-Python/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Python/)
+* Funz-R [![Funz-R](https://github.com/Funz/plugin-R/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-R/)
+* Funz-Scale [![Funz-Scale](https://github.com/Funz/plugin-Scale/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Scale/)
+* Funz-Telemac [![Funz-Telemac](https://github.com/Funz/plugin-Telemac/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Telemac/)
+* Funz-VBS [![Funz-VBS](https://github.com/Funz/plugin-VBS/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-VBS/)
 
 For convenience, a [basic template](https://github.com/Funz/plugin-template) is provided and should be used as a scratch project.
 
