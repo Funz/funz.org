@@ -10,17 +10,21 @@ Installation from following package managers is supported:
 * Python: 
   * {% highlight bash %}pip install Funz{% endhighlight %}, then {% highlight python %}import Funz{% endhighlight %}
   * Later, you can install more models & algorithms using:
-    * {% highlight python %}Funz.installModel("Modelica"){% endhighlight %}
-    * {% highlight python %}Funz.installDesign("GradientDescent"){% endhighlight %}
+    {% highlight python %}Funz.availableModels(){% endhighlight %}
+    {% highlight python %}Funz.installModel("Modelica"){% endhighlight %}
+    {% highlight python %}Funz.availableDesigns(){% endhighlight %}
+    {% highlight python %}Funz.installDesign("GradientDescent"){% endhighlight %}
 * R: 
   * {% highlight r %}# if needed: install.packages("devtools")
 devtools::install_github("Funz/Funz.R"){% endhighlight %}, then {% highlight r %}library('Funz'){% endhighlight %}
   * Later, you can install more models & algorithms using:
-    * {% highlight r %}Funz::install.Model("Modelica"){% endhighlight %}
-    * {% highlight r %}Funz::install.Design("GradientDescent"){% endhighlight %}
+    {% highlight r %}Funz::available.Models(){% endhighlight %}
+    {% highlight r %}Funz::install.Model("Modelica"){% endhighlight %}
+    {% highlight r %}Funz::available.Designs(){% endhighlight %}
+    {% highlight r %}Funz::install.Design("GradientDescent"){% endhighlight %}
 
 
-### Manual install
+### Manual install (bundle)
 
 For conveniency, many integrated packages are available, bundled with plugins and algorithms in GH releases:
 
@@ -36,6 +40,8 @@ For conveniency, many integrated packages are available, bundled with plugins an
 * [Telemac](https://github.com/Funz/plugin-Telemac/releases/latest)
 
 You can get 'Funz-*.zip' archive of whole working Funz directory, unzip and just follow [usage guidelines]({{ "/docs/usage_cli/" | prepend: site.baseurl }}).
+
+### Manual install (from scratch)
 
 If you prefer a custom installation, you can 
 
