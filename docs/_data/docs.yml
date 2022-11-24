@@ -4,6 +4,8 @@
 
 - title: Installation
   docs:
+  - install_Python
+  - install_R
   - install
 
 - title: User guide
