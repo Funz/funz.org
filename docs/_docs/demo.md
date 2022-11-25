@@ -3,16 +3,20 @@ title: OpenModelica demo
 permalink: /docs/demo/
 ---
 
-## Requirements
-
 The following demo steps are intended to work after this setup. 
 We arbitrary choose Modelica as a target code example, but you can use any other already available in https://github.com/Funz .
 
-  * install OpenModelica on your platform from [OpenModelica website](https://openmodelica.org), so `omc` command will be recognized in your `PATH`
-  * get Funz-Modelica distribution: https://github.com/Funz/plugin-Modelica/releases/... (which also include some basic algorithms like gradient descent optimization and root finding)
-  * unzip in current test directory: `unzip Funz-Modelica.zip`
-  * move in test directory: `cd Funz-Modelica`
-  * wake up the 4 Funz 'daemons' which will provide calculation services: `./FunzDaemon_start.sh 4`
+## Requirements
+
+  * install OpenModelica on your platform:
+    * from [OpenModelica website](https://openmodelica.org), 
+    * or using some package manager (eg. for debian/ubuntu): <pre class="highlight"><code>for deb in deb deb-src; do echo "$deb http://build.openmodelica.org/apt `lsb_release -cs` release"; done | sudo tee /etc/apt/sources.list.d/openmodelica.list
+wget -q http://build.openmodelica.org/apt/openmodelica.asc -O- | sudo apt-key add -
+apt update && apt install openmodelica</code></pre>
+  * check that `omc` command will be recognized in your `PATH`
+
+
+## Problem setup
 
 We will then work on the 'NewtonCooling' example, which solves a basic PDE on temperature, provided in the `Funz-Modelica/samples` directory:
 ```
@@ -52,13 +56,104 @@ end NewtonCooling;
 
 <hr/>
 
-We use `Funz.sh` (or `Funz.bat`) to launch Funz calculations from command-line `bash` (or `cmd.exe`).
-You can also get the same results using R, python or Java scripts, with adapted commands. 
+
+## using Python...
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Funz/funz.github.io/blob/master/docs/_docs/Funz_py_NewtonCooling.ipynb)
+
+### Install
+
+Install Funz through pypi:
+```bash
+pip install Funz
+```
+
+Then install plugin to support Modelica I/O:
+```python
+import Funz
+Funz.installModel('Modelica')
+```
+
+Wake up the 3 Funz 'daemons' which will provide calculation services:
+```python
+Funz.startCalculators(3)
+```
 
 
-## Basic parametric run
+### Basic parametric run
 
-Launching 4 calculations for different `convection` values (0.5, 0.6, 0.7, 0.8) is done as follows:
+Launch 6 calculations for different `convection` values (0.5, 0.6, 0.7, 0.8, 0.9, 1.0):
+```python
+Funz.Run(model="Modelica",input_files="NewtonCooling.mo.par", input_variables={'convection':[0.5,0.6,0.7,0.8,0.9,1.0]}, output_expressions="min(T)")
+```
+
+### Algorithm-driven root finding
+
+Find the `convection` value leading to `min(T) = 25.2` (with relative precision of 0.01 on `convection` value), using Brent root finding algorithm:
+```python
+Funz.installDesign('Brent')
+Funz.RunDesign(model="Modelica",input_files="NewtonCooling.mo.par", input_variables={'convection':"[0.5,1.0]"}, output_expressions="min(T)", 
+               design="Brent", design_options={'ytarget':25.2, 'ytol':0.01})
+```
+
+
+## using R...
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Funz/funz.github.io/blob/master/docs/_docs/Funz_R_NewtonCooling.ipynb)
+
+### Install
+
+Install Funz, through devtools:
+```r
+devtools::install_github('Funz/Funz.R')
+library(Funz)
+```
+
+Then install plugin to support Modelica I/O:
+```r
+install.Model('Modelica')
+```
+
+Wake up the 3 Funz 'daemons' which will provide calculation services:
+```r
+startCalculators(3)
+```
+
+### Basic parametric run
+
+Launch 6 calculations for different `convection` values (0.5, 0.6, 0.7, 0.8, 0.9, 1.0):
+```r
+Run(model="Modelica",input.files="NewtonCooling.mo.par", input.variables=list(convection=c(0.5,0.6,0.7,0.8,0.9,1.0)), output.expressions="min(T)")
+```
+
+### Algorithm-driven root finding
+
+Find the `convection` value leading to `min(T) = 25.2` (with relative precision of 0.01 on `convection` value), using Brent root finding algorithm:
+```r
+Funz.installDesign('Brent')
+Funz.RunDesign(model="Modelica",input_files="NewtonCooling.mo.par", input_variables={'convection':"[0.5,1.0]"}, output_expressions="min(T)", 
+               design="Brent", design_options={'ytarget':25.2, 'ytol':0.01})
+```
+
+
+
+## using Shell...
+
+### Install
+
+Install Funz & Modelica plugin:
+
+  * get Funz-Modelica distribution: https://github.com/Funz/plugin-Modelica/releases/... (which also include some basic algorithms like gradient descent optimization and root finding)
+  * unzip in current directory: `unzip Funz-Modelica.zip`
+  * move in Funz directory: `cd Funz-Modelica`
+
+Wake up the 3 Funz 'daemons' which will provide calculation services: `./FunzDaemon_start.sh 3`
+
+We will use `Funz.sh` (or `Funz.bat`) to launch Funz calculations from command-line `bash` (or `cmd.exe`).
+
+### Basic parametric run
+
+Launching 6 calculations for different `convection` values (0.5, 0.6, 0.7, 0.8, 0.9, 1.0) is done as follows:
 ```bash
 ./Funz.sh Run -m Modelica -if samples/NewtonCooling.mo.par -iv convection=0.5,0.6,0.7,0.8,0.9,1.0 -oe "min(T)" -v 0 -pf "convection" "min(T)" "info"
 ```
@@ -74,10 +169,9 @@ and returns:
 | 1.0        | 25.01947293170708 | Run succeded. |
 ```
 
+### Algorithm-driven root finding
 
-## Algorithm-driven root finding
-
-Now we will ask a (quite simple) algorithm to find the `convection` value leading to `min(T) = 0.3` (with relative precision of 0.01 on `convection` value):
+Now we will ask a (quite simple) algorithm to find the `convection` value leading to `min(T) = 25.2` (with relative precision of 0.01 on `convection` value):
 ```bash
 ./Funz.sh RunDesign -m Modelica -if samples/NewtonCooling.mo.par -iv convection=[0.5,1.0] -oe "min(T)" -d Brent -do ytarget=25.2 ytol=0.01 -v 0
 ```
