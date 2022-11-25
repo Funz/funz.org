@@ -17,6 +17,8 @@ For now, following are available out-of-the-box:
 * Funz-GradientDescent [![Funz-GradientDescent](https://github.com/Funz/algorithm-GradientDescent/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/algorithm-GradientDescent/)
 * Funz-PSO [![Funz-PSO](https://github.com/Funz/algorithm-PSO/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/algorithm-PSO/)
 * Funz-RandomSampling [![Funz-RandomSampling](https://github.com/Funz/algorithm-RandomSampling/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/algorithm-RandomSampling/)
+* Funz-Sensitivity [![Funz-Sensitivity](https://github.com/Funz/algorithm-Sensitivity/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/algorithm-Sensitivity/)
+* Funz-NSGA2 [![Funz-NSGA2](https://github.com/Funz/algorithm-NSGA2/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/algorithm-NSGA2/)
 
 For conveniency, a [basic template](https://github.com/Funz/algorithm-template) is provided and should be used as a scratch project.
 
