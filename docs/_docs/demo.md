@@ -10,9 +10,12 @@ We arbitrary choose Modelica as a target code example, but you can use any other
 
   * install OpenModelica on your platform:
     * from [OpenModelica website](https://openmodelica.org), 
-    * or using some package manager (eg. for debian/ubuntu): <pre class="highlight"><code>for deb in deb deb-src; do echo "$deb http://build.openmodelica.org/apt `lsb_release -cs` release"; done | sudo tee /etc/apt/sources.list.d/openmodelica.list
+    * or using some package manager (eg. for debian/ubuntu): 
+```bash
+for deb in deb deb-src; do echo "$deb http://build.openmodelica.org/apt `lsb_release -cs` release"; done | sudo tee /etc/apt/sources.list.d/openmodelica.list
 wget -q http://build.openmodelica.org/apt/openmodelica.asc -O- | sudo apt-key add -
-apt update && apt install openmodelica</code></pre>
+apt update && apt install openmodelica
+```
   * check that `omc` command will be recognized in your `PATH`
 
 
@@ -59,7 +62,7 @@ end NewtonCooling;
 
 ## using Python...
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Funz/funz.github.io/blob/master/docs/_docs/Funz_py_NewtonCooling.ipynb)
+* [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Funz/funz.github.io/blob/master/docs/_docs/Funz_py_NewtonCooling.ipynb)
 
 ### Install
 
@@ -99,7 +102,7 @@ Funz.RunDesign(model="Modelica",input_files="NewtonCooling.mo.par", input_variab
 
 ## using R...
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Funz/funz.github.io/blob/master/docs/_docs/Funz_R_NewtonCooling.ipynb)
+* [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Funz/funz.github.io/blob/master/docs/_docs/Funz_R_NewtonCooling.ipynb)
 
 ### Install
 
