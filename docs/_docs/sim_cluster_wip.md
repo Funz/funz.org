@@ -1,6 +1,6 @@
 ---
-title: "Usage: Simulation on HPC backend"
-permalink: /docs/sim_cluster/
+title: "Simulation on HPC backend"
+permalink: /docs/sim_cluster_wip/
 ---
 
 If you can access a HPC cluster, it is efficient way to launch many simulation is to use the compute distribution engine, while using the front node to launch Funz commands. 

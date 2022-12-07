@@ -1,5 +1,5 @@
 ---
-title: "Usage: Simulation on standalone computer"
+title: "Simulation on standalone computer"
 permalink: /docs/sim_local/
 ---
 

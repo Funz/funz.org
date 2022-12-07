@@ -1,5 +1,5 @@
 ---
-title: "Usage: Simulation on local network or cloud subnet"
+title: "Simulation on local network or cloud subnet"
 permalink: /docs/sim_net/
 ---
 
