@@ -6,6 +6,12 @@ permalink: /docs/demo/
 The following demo steps are intended to work after this setup. 
 We arbitrary choose Modelica as a target code example, but you can use any other already available in https://github.com/Funz .
 
+TLDR: you can checkout Google colab notebooks for this demo:
+
+  * Python: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Funz/funz.github.io/blob/master/docs/_docs/Funz_py_NewtonCooling.ipynb)
+  * R: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Funz/funz.github.io/blob/master/docs/_docs/Funz_R_NewtonCooling.ipynb)
+
+
 ## Requirements
 
   * install OpenModelica on your platform:
