@@ -7,18 +7,24 @@ If you can access a HPC cluster, it is efficient way to launch many simulation i
 
 Assuming that the simulation software (say Modelica, our standard example) is already installed on the cluster, you can use one of these ways:
 
-  * start daemons and run Funz from front node
-  * start daemons on computing nodes, run Funz from front node
-  * start daemons on front node, and run Funz from your own computer
+  1. start daemons and run Funz from __front node__
+  2. start daemons on __computing nodes__, run Funz from __front node__
+  3. start daemons on __front node__, and run Funz from __your own computer__
+
+
+## 1. 
+
+
+## 2. 
 
   * intall Funz: 
-    * Python: `pip install Funz`, `import Funz`
-    * R: `remotes::install_github('Funz/Funz.R'); library(Funz)`
-    * bash: download and unzip https://github.com/Funz/plugin-Bash/releases/latest
+    * Python: `pip install Funz`, then `import Funz`
+    * R: `remotes::install_github('Funz/Funz.R')`, then `library(Funz)`
+    * bash: download and unzip [Funz-Bash.zip](https://github.com/Funz/plugin-Bash/releases/latest)
   * install simulation plugin:
     * Python: `Funz.installModel('Modelica')`
     * R: `Funz::install.Model('Modelica')`
-    * bash: download and unzip plugin at https://github.com/Funz/plugin-Modelica/releases/latest
+    * bash: download and unzip [plugin-Modelica.zip](https://github.com/Funz/plugin-Modelica/releases/latest)
   * setup simulation script 'Funz/scripts/Modelica.sh' to 
   * __add front node IP (say 192.168.1.1) in the 'Funz/calculator.xml' file:__
     ```
@@ -43,3 +49,5 @@ Assuming that the simulation software (say Modelica, our standard example) is al
   * Python: `Funz.Run(model="Modelica",input_files="NewtonCooling.mo")`
   * R: `Funz::Run(model="Modelica",input.files="NewtonCooling.mo")`
   * bash/cmd.exe: `./Funz.sh Run -m Modelica -if samples/NewtonCooling.mo` or `./Funz.bat Run -m Modelica -if samples/NewtonCooling.mo` 
+
+## 3. 

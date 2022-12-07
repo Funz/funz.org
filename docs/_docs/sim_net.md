@@ -8,13 +8,13 @@ An efficient way to launch many simulation is to use other local network compute
 Assuming that the simulation software (say Modelica, our standard example) is already installed on the other local network computers, on each you just have to:
 
   * intall Funz: 
-    * Python: `pip install Funz`, `import Funz`
-    * R: `remotes::install_github('Funz/Funz.R'); library(Funz)`
-    * bash/cmd.exe: download and unzip https://github.com/Funz/plugin-Bash/releases/latest or https://github.com/Funz/plugin-Cmd.exe/releases/latest
+    * Python: `pip install Funz`, then `import Funz`
+    * R: `remotes::install_github('Funz/Funz.R')`, then `library(Funz)`
+    * bash/cmd.exe: download and unzip [Funz-Bash.zip](https://github.com/Funz/plugin-Bash/releases/latest) or [Funz-Cmd.exe.zip](https://github.com/Funz/plugin-Cmd.exe/releases/latest)
   * install simulation plugin:
     * Python: `Funz.installModel('Modelica')`
     * R: `Funz::install.Model('Modelica')`
-    * bash/cmd.exe: download and unzip plugin at https://github.com/Funz/plugin-Modelica/releases/latest
+    * bash/cmd.exe: download and unzip [plugin-Modelica.zip](https://github.com/Funz/plugin-Modelica/releases/latest)
   * if needed, setup simulation script 'Funz/scripts/Modelica.sh' or 'Funz/scripts/Modelica.bat'
   * __add your own computer IP (say 192.168.1.123) in the 'Funz/calculator.xml' file:__
     ```
