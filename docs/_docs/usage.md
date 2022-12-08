@@ -3,16 +3,18 @@ title: Usage
 permalink: /docs/usage/
 ---
 
-## Simulations & computing
+Funz is basically composed of the main user interface (called from Python, R, Java, bash or cmd) and its backend which supports simulations launching.
+
+## Computing backend
 
 Funz is designed to make the most of whatever computing resources you could rely:
 
-  * [Standalone]({{ "/docs/sim_local/" | prepend: site.baseurl }}) : you just use your own comuter to launch calculations
-  * [Local network]({{ "/docs/sim_net/" | prepend: site.baseurl }}) : you launch calculations on many computers within the same network or cloud subnet (Funz supports the distribution task)
-  * [HPC backend]({{ "/docs/sim_cluster/" | prepend: site.baseurl }}) : your calculations are launch through a standard cluster management scheduler (SLURM, SGE, PBS, OAR, ...)
+  * [Standalone]({{ "/docs/sim_local/" | prepend: site.baseurl }}) : you just use your own comuter to launch simulations
+  * [Local network]({{ "/docs/sim_net/" | prepend: site.baseurl }}) : you launch simulations on many computers within the same network or cloud subnet (Funz supports the distribution task)
+  * [HPC]({{ "/docs/sim_cluster/" | prepend: site.baseurl }}) : your simulations are launch through a standard cluster management scheduler (SLURM, SGE, PBS, OAR, ...)
 
 
-## End user interface
+## User interface
 
 You can use Funz through several interfaces for both Windows, OSX and Linux:
 

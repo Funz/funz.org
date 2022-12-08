@@ -30,12 +30,12 @@ Assuming that the simulation software (say Modelica, our standard example) is al
   * start background Funz computing daemon:
     * Python: `Funz.startCalculators(1)`
     * R: `Funz::startCalculators(1)`
-    * bash/cmd.exe: launch `Funz/FunzDaemon.sh` or `Funz/FunzDaemon.bat`
+    * bash/cmd.exe: launch backend `Funz/FunzDaemon.sh` or `Funz/FunzDaemon.bat`
 
   ---
 
   You can now check that these computers are well setup by running basic example on your own, that will use one of the local network computers:
 
-  * Python: `Funz.Run(model="Modelica",input_files="NewtonCooling.mo")`
-  * R: `Funz::Run(model="Modelica",input.files="NewtonCooling.mo")`
+  * Python: `Funz.Run(model="Modelica",input_files="samples/NewtonCooling.mo")`
+  * R: `Funz::Run(model="Modelica",input.files="samples/NewtonCooling.mo")`
   * bash/cmd.exe: `./Funz.sh Run -m Modelica -if samples/NewtonCooling.mo` or `./Funz.bat Run -m Modelica -if samples/NewtonCooling.mo` 
