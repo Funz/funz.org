@@ -17,6 +17,8 @@ For conveniency, many integrated packages are available, bundled with plugins an
 * [Scale](https://github.com/Funz/plugin-ScaleThen/releases/latest)
 * [Cristal](https://github.com/Funz/plugin-Cristal/releases/latest)
 * [Telemac](https://github.com/Funz/plugin-Telemac/releases/latest)
+* [Jupyter](https://github.com/Funz/plugin-Telemac/releases/latest)
+* [Rmd](https://github.com/Funz/plugin-Telemac/releases/latest)
 
 You can get 'Funz-*.zip' archive of whole working Funz directory, unzip and just follow [usage guidelines]({{ "/docs/usage_cli/" | prepend: site.baseurl }}).
 
