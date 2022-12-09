@@ -13,12 +13,12 @@ permalink: /docs/usage_python/
 
 #### Using a (pip) module
 
-Once Funz is installed form Python ('pip install Funz'), then just load module using:
+Once Funz is installed from Python (`pip install Funz`), then just load module using:
 ```python
 import Funz
 ```
 
-#### Using pre-installed Funz
+#### or Using pre-installed Funz
 
 You need to load Funz with dedicated scipt: `python3 -i /opt/Funz/Funz.py` or load it interactively: 
 ```python
@@ -58,12 +58,12 @@ Funz 1.9 <build 27/03/2019 15:05>
 ```
 
 
-### Using
+### Using Funz
 
 Main features & functions:
-  * to run external parametric calculations of simulator `model` with input files `input_files`: `Funz_Run()` with following arguments: 
+  * to run external parametric calculations of simulator `model` with input files `input_files`: `Funz.Run()` with following arguments: 
 ```python
-Funz_Run(model,input_files)
+Funz.Run(model,input_files)
 ```
 ```python
 model = None
@@ -77,7 +77,7 @@ verbosity = 0
 log_file = True
 monitor_control = {'sleep':5, 'display_fun':None}
 ```
-  * to drive a python function `fun` by algorithm `design`: `Funz_Design()` with following (default) arguments:
+  * to drive a python function `fun` by algorithm `design`: `Funz.Design()` with following (default) arguments:
 ```python
 fun # python function to drive by algorithm
 design # algorithm to use
@@ -90,7 +90,7 @@ verbosity = 0
 log_file = True
 *vargs
 ```
-  * to drive external parametric calculations of simulator `model` with input files `input_files` by algorithm `design`: `Funz_RunDesign()` with following (default) arguments:
+  * to drive external parametric calculations of simulator `model` with input files `input_files` by algorithm `design`: `Funz.RunDesign()` with following (default) arguments:
 ```python
 model = None
 input_files = None
@@ -108,17 +108,17 @@ log_file = True
 Access to some intern features is also available:
   * parse parametric `input_files` to identify parameters and expected output from `model`:
 ```python
-Funz_ParseInput(model,input_files)
+Funz.ParseInput(model,input_files)
 ```
   * parse & compile parametric `input_files`  from `model` to replace parameters by `input_values`:
 ```python
-Funz_CompileInput(model,input_files,input_values,output_dir=".")
+Funz.CompileInput(model,input_files,input_values,output_dir=".")
 ```
   * read output files in `output_dir` to get expected values of interest from `model` with `input_files`:
 ```python
-Funz_ReadOutput(model, input_files, output_dir)
+Funz.ReadOutput(model, input_files, output_dir)
 ```
-  * scan newtwork & local computers suitable to launch calculations: `Funz_GridStatus()`, which returns:
+  * scan newtwork & local computers suitable to launch calculations: `Funz.Grid()`, which returns:
 <pre class="highlight"><div style="width: 1400px; overflow-x:scroll;"><code>| Computer | host name | OS              | address:port      | local status | since    | activity                               | codes          |
 |----------|-----------|-----------------|-------------------|--------------|----------|----------------------------------------|----------------|
 | neutro-1 | localhost | Linux 4.15.0-43 | 192.168.0.1:34485 | free         | 22:19:02 | idle (cpu=11.88;mem=26.18;disk=62.17;) | Modelica, bash |
