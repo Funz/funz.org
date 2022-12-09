@@ -3,7 +3,7 @@ title: "Simulation on HPC"
 permalink: /docs/sim_cluster/
 ---
 
-If you can access a HPC cluster, it is efficient way to launch many simulation is to use the compute distribution engine, while using the front node to launch Funz commands. 
+If you can access a HPC cluster, a powerful way to launch many simulation is to use the compute distribution engine, while using the front node to launch Funz commands. 
 
 Assuming that the simulation software (say Modelica, our standard example) is already installed on the cluster, you can use one of these ways:
 
@@ -69,7 +69,7 @@ On the front node:
     ...
     </CALCULATOR>
     ```
-    _note that SLURM, SGE and OAR wraping scripts are available inside 'Funz/scripts' directory_
+    _note that SLURM, SGE and OAR wrapping scripts are available inside 'Funz/scripts' directory_
   * start background Funz computing daemon:
     * Python: `Funz.startCalculators(1)`
     * R: `Funz::startCalculators(1)`
