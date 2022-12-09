@@ -1,7 +1,3 @@
-- title: Demo
-  docs:
-  - demo
-
 - title: Installation
   docs:
   - install_Python

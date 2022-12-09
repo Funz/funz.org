@@ -6,7 +6,7 @@ description: Funz project website.
 baseurl: "/" # the subpath of your site, e.g. /blog/
 url: https://Funz.github.io/ # the base hostname & protocol for your site
 git_address: https://github.com/Funz/funz.github.io
-git_edit_address: https://github.com/Funz/funz.github.io/edit/master
+git_edit_address: https://github.com/Funz/funz.github.io/edit/master/
 
 # theme options from https://bootswatch.com/
 # comment out this to use default Bootstrap
@@ -30,13 +30,6 @@ exclude:
 timezone: Europe/Paris
 defaults:
 - scope:
-    path: _posts
-    type: posts
-  values:
-    layout: post
-    sectionid: blog
-
-- scope:
     path: _docs
     type: docs
   values:
@@ -45,8 +38,20 @@ defaults:
     seo:
       type: "WebPage"
 
+- scope:
+    path: _docs
+    type: demos
+  values:
+    layout: demos
+    sectionid: demos
+    seo:
+      type: "WebPage"
+
 collections:
   docs:
+    permalink: /:collection/:path/
+    output: true
+  demos:
     permalink: /:collection/:path/
     output: true
   posts:
