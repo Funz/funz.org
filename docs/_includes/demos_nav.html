@@ -16,7 +16,6 @@
           {% assign item_url = item | prepend:"/demos/" | append:"/" %}
           {{ item_url }}
           site.demos: {{ site.demos }}
-          site.docs: {{ site.docs }}
           {% assign p = site.demos | where:"url", item_url | first %}
           {{ p.title }}
           <a class="list-group-item {% if item_url == page.url %}active{% endif %}" href="{{ p.url  | prepend: site.baseurl }}">{{ p.title }}</a>
