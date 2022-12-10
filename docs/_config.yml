@@ -39,7 +39,7 @@ defaults:
       type: "WebPage"
 
 - scope:
-    path: _docs
+    path: _demos
     type: demos
   values:
     layout: demos
