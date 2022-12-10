@@ -1,6 +1,6 @@
 ---
 title: Funz demos
-permalink: /demos/demo/
+permalink: /demos/home/
 redirect_from: /docs/index.html
 ---
 

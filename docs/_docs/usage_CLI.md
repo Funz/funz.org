@@ -1,6 +1,6 @@
 ---
 title: "Usage: Command Line"
-permalink: /docs/usage_cli/
+permalink: /docs/usage_CLI/
 ---
 
 For bash or cmd.exe, the usage pattern is the following `Funz.sh -h` or `Funz.bat -h`:

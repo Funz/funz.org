@@ -1,5 +1,5 @@
 - title: Newton cooling
-  demos:
+  docs:
   - NewtonCooling_Python
   - NewtonCooling_R
   - NewtonCooling_scratch

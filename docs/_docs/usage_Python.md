@@ -11,9 +11,9 @@ permalink: /docs/usage_python/
 
 ### Loading Funz
 
-#### Using a (pip) module
+#### Using a pypi module
 
-Once Funz is installed from Python (`pip install Funz`), then just load module using:
+Once Funz is installed from Python (`pip install Funz`), then just load it using:
 ```python
 import Funz
 ```
@@ -61,10 +61,7 @@ Funz 1.9 <build 27/03/2019 15:05>
 ### Using Funz
 
 Main features & functions:
-  * to run external parametric calculations of simulator `model` with input files `input_files`: `Funz.Run()` with following arguments: 
-```python
-Funz.Run(model,input_files)
-```
+  * to run external parametric calculations of simulator `model` with input files `input_files`: `Funz.Run()` (or `Funz_Run()` if not using pip) with following arguments: 
 ```python
 model = None
 input_files = None
@@ -77,7 +74,7 @@ verbosity = 0
 log_file = True
 monitor_control = {'sleep':5, 'display_fun':None}
 ```
-  * to drive a python function `fun` by algorithm `design`: `Funz.Design()` with following (default) arguments:
+  * to drive a python function `fun` by algorithm `design`: `Funz.Design()` (or `Funz_Design()` if not using pip) with following (default) arguments:
 ```python
 fun # python function to drive by algorithm
 design # algorithm to use
@@ -90,7 +87,7 @@ verbosity = 0
 log_file = True
 *vargs
 ```
-  * to drive external parametric calculations of simulator `model` with input files `input_files` by algorithm `design`: `Funz.RunDesign()` with following (default) arguments:
+  * to drive external parametric calculations of simulator `model` with input files `input_files` by algorithm `design`: `Funz.RunDesign()` (or `Funz_RunDesign()` if not using pip) with following (default) arguments:
 ```python
 model = None
 input_files = None

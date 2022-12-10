@@ -9,9 +9,9 @@ permalink: /docs/usage_R/
 
 ### Loading Funz
 
-#### Using a (pip) module
+#### Using a devtools install
 
-Once Funz is installed form Python ('pip install Funz'), then just load module using:
+Once Funz is installed form R (`devtools::install-github('Funz/Funz.R')`), then just load it using:
 ```r
 library(Funz)
 ```
@@ -59,10 +59,7 @@ Funz 1.9 <build 27/03/2019 15:05>
 ### Using Funz
 
 Main features & functions:
-  * to run external parametric calculations of simulator `model` with input files `input.files`: `Run()` with following arguments: 
-```r
-Run(model,input.files)
-```
+  * to run external parametric calculations of simulator `model` with input files `input.files`: `Run()` (or `Funz_Run()` if not using devtools::install_github) with following arguments: 
 ```r
 model = NULL
 input.files
@@ -75,7 +72,7 @@ verbosity = 0
 log.file = TRUE
 monitor.control = list(sleep=5, display.fun=NULL)
 ```
-  * to drive a R function `fun` by algorithm `design`: `Design()` with following (default) arguments:
+  * to drive a R function `fun` by algorithm `design`: `Design()`  (or `Funz_Design()` when not using devtools::install_github) with following (default) arguments:
 ```r
 fun # R function to drive by algorithm
 design # algorithm to use
@@ -88,7 +85,7 @@ verbosity = 0
 log.file = TRUE
 ...
 ```
-  * to drive external parametric calculations of simulator `model` with input files `input.files` by algorithm `design`: `RunDesign()` with following (default) arguments:
+  * to drive external parametric calculations of simulator `model` with input files `input.files` by algorithm `design`: `RunDesign()`  (or `Funz_RunDesign()` when not using devtools::install_github) with following (default) arguments:
 ```r
 model = NULL
 input.files = NULL
