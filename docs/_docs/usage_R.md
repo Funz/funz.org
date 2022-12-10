@@ -11,7 +11,7 @@ permalink: /docs/usage_R/
 
 #### Using a devtools install
 
-Once Funz is installed form R (`devtools::install-github('Funz/Funz.R')`), then just load it using:
+Once Funz is installed form R (`devtools::install_github('Funz/Funz.R')`), then just load it using:
 ```r
 library(Funz)
 ```
