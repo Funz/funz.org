@@ -36,7 +36,50 @@ layout: default
         </div>
         <div class="col-md-3 text-center">
             <img src="img/logo.png" alt="" class="img-responsive">
-        </div>    
+        </div>   
+        
+        <hr>
+
+        <div class="row">
+            <h2 class="header-light regular-pad">Overview</h2>
+            <div class="col-sm-4">
+                <h1 class="text-center"><i class="fa fa-gift" aria-hidden="true"></i></h1>
+                <h3 class="text-center">Wrapping</h3>
+                <p>
+                  <ul>
+                    <li>A standardized <strong>execution script</strong> (properly exiting when calcualtion failed),</li>
+                    <li>A set of <strong>reserved characters</strong> (like '$') for input files parametrization,</li>
+                    <li>Some <strong>regular expression</strong> to extract output values of interest.</li>
+                  </ul>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <h1 class="text-center"><i class="fa fa-cogs" aria-hidden="true"></i></h1>
+                <h3 class="text-center">Features</h3>
+                <p>
+                  <ol>
+                    <li>Parse & compile <strong>input files</strong> with given parametric syntax,</li>
+                    <li>Launch <strong>remote execution</strong> of each input combination given (async on dedicated TCP channel),</li>
+                    <li>Call <strong>external algorithm</strong> to drive calculation parameters values,</li>
+                    <li>Monitor & restart failed calculations (blacklisting unsuitable computers),</li>
+                    <li>Store & parse <strong>output results</strong>.</li>
+                  </ol>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <h1 class="text-center"><i class="fa fa-code-fork" aria-hidden="true"></i></h1>
+                <h3 class="text-center">Extensibility</h3>
+                <p>
+                 <ul>
+                    <li>Wrapper for any <strong>simulation software</strong> (holds I/O files, ASCII & common formats: HDF5 NetCDF XML JSON),</li>
+                    <li>Algorithm for <strong>design of experiments</strong> (supports definition of input values regarding engineering objective).</li>
+                 </ul>
+                </p>
+            </div>
+        </div>
+
+        <hr>
+
         <div class="col-md-12">           
             <h3>Examples ?</h3>
             <blockquote>
@@ -83,48 +126,6 @@ result  = Funz.Run(model="Excel",input_files=["postpro.xlsx"],input_variables= X
             </blockquote>
         </div>
     </div>
-
-    <hr>
-
-    <div class="row">
-        <h2 class="header-light regular-pad">Overview</h2>
-        <div class="col-sm-4">
-            <h1 class="text-center"><i class="fa fa-gift" aria-hidden="true"></i></h1>
-            <h3 class="text-center">Wrapping</h3>
-            <p>
-              <ul>
-                <li>A standardized <strong>execution script</strong> (properly exiting when calcualtion failed),</li>
-                <li>A set of <strong>reserved characters</strong> (like '$') for input files parametrization,</li>
-                <li>Some <strong>regular expression</strong> to extract output values of interest.</li>
-              </ul>
-            </p>
-        </div>
-        <div class="col-sm-4">
-            <h1 class="text-center"><i class="fa fa-cogs" aria-hidden="true"></i></h1>
-            <h3 class="text-center">Features</h3>
-            <p>
-              <ol>
-                <li>Parse & compile <strong>input files</strong> with given parametric syntax,</li>
-                <li>Launch <strong>remote execution</strong> of each input combination given (async on dedicated TCP channel),</li>
-                <li>Call <strong>external algorithm</strong> to drive calculation parameters values,</li>
-                <li>Monitor & restart failed calculations (blacklisting unsuitable computers),</li>
-                <li>Store & parse <strong>output results</strong>.</li>
-              </ol>
-            </p>
-        </div>
-        <div class="col-sm-4">
-            <h1 class="text-center"><i class="fa fa-code-fork" aria-hidden="true"></i></h1>
-            <h3 class="text-center">Extensibility</h3>
-            <p>
-             <ul>
-                <li>Wrapper for any <strong>simulation software</strong> (holds I/O files, ASCII & common formats: HDF5 NetCDF XML JSON),</li>
-                <li>Algorithm for <strong>design of experiments</strong> (supports definition of input values regarding engineering objective).</li>
-             </ul>
-            </p>
-        </div>
-    </div>
-
-        <hr>
 
     <hr>
 
