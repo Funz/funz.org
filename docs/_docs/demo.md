@@ -1,6 +1,6 @@
 ---
-title: Funz
-permalink: /docs/demo/
+title: Funz demos
+permalink: /demos/demo/
 redirect_from: /docs/index.html
 ---
 
