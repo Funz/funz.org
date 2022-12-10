@@ -8,8 +8,7 @@ For that purpose, [OpenModelica is a standard solution](https://mbe.modelica.uni
 
 _You can refer to [https://mbe.modelica.university/](https://mbe.modelica.university/) website to learn and play with Modelica PDE solver._
 
-TLDR: you can checkout Google colab notebook for this demo:
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Funz/funz.github.io/blob/master/docs/_docs/Funz_R_NewtonCooling.ipynb)
+TLDR: you can checkout Google colab notebook for this demo: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Funz/funz.github.io/blob/master/docs/_docs/Funz_R_NewtonCooling.ipynb)
 
 
 ## Requirements
@@ -61,7 +60,7 @@ equation
   m*c_p*der(T) = h*A*(T_inf-T) "Newton's law of cooling";
 end NewtonCooling;
 </code></pre>
-... and now play with this 'functional' wraping ...
+... and now play with this 'functional' wrapping ...
 
 
 ## Funz

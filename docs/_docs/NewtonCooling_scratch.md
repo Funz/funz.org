@@ -58,7 +58,7 @@ equation
   m*c_p*der(T) = h*A*(T_inf-T) "Newton's law of cooling";
 end NewtonCooling;
 </code></pre>
-... and now play with this 'functional' wraping ...
+... and now play with this 'functional' wrapping ...
 
 
 ## Funz
