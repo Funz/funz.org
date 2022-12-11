@@ -1,6 +1,6 @@
 ---
 title: Newton cooling from Python
-permalink: /demos/NewtonCooling_Python
+permalink: /demos/NewtonCooling_Python/
 ---
 
 We will simulate a basic cooling system follwoing Newton's law. 

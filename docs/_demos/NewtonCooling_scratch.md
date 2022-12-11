@@ -1,6 +1,6 @@
 ---
 title: Newton cooling from scratch
-permalink: /demos/NewtonCooling_scratch
+permalink: /demos/NewtonCooling_scratch/
 ---
 
 We will simulate a basic cooling system follwoing Newton's law. 

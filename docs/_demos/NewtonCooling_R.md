@@ -1,6 +1,6 @@
 ---
 title: Newton cooling from R
-permalink: /demos/NewtonCooling_R
+permalink: /demos/NewtonCooling_R/
 ---
 
 We will simulate a basic cooling system follwoing Newton's law. 
