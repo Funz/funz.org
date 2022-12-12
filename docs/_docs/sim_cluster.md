@@ -45,7 +45,7 @@ On a __shared path__ between computing and front nodes:
 
   * Python: `Funz.Run(model="Modelica",input_files="samples/NewtonCooling.mo")`
   * R: `Funz::Run(model="Modelica",input.files="samples/NewtonCooling.mo")`
-  * bash/cmd.exe: `./Funz.sh Run -m Modelica -if samples/NewtonCooling.mo` or `./Funz.bat Run -m Modelica -if samples/NewtonCooling.mo` 
+  * bash: `./Funz.sh Run -m Modelica -if samples/NewtonCooling.mo`
 
 
 ## 2. Backend + Funz on __front node__
@@ -73,7 +73,7 @@ On the front node:
   * start background Funz computing daemon:
     * Python: `Funz.startCalculators(1)`
     * R: `Funz::startCalculators(1)`
-    * bash: launch backend `Funz/FunzDaemon.sh`
+    * bash: launch backend `Funz/FunzDaemon_start.sh 1`
 
   ---
 
@@ -120,15 +120,24 @@ On the front node:
   * start background Funz computing daemon:
     * Python: `Funz.startCalculators(1)`
     * R: `Funz::startCalculators(1)`
-    * bash: launch backend `Funz/FunzDaemon.sh`
+    * bash: launch backend `Funz/FunzDaemon_start.sh 1`
 
   ---
 
   You can now check that the backend is well setup by running basic example from your computer (ie. not in cluster):
 
-  * Python: `Funz.Run(model="Modelica",input_files="samples/NewtonCooling.mo")`
-  * R: `Funz::Run(model="Modelica",input.files="samples/NewtonCooling.mo")`
-  * bash: `./Funz.sh Run -m Modelica -if samples/NewtonCooling.mo`
+* intall Funz: 
+    * Python: `pip install Funz`, then `import Funz`
+    * R: `remotes::install_github('Funz/Funz.R')`, then `library(Funz)`
+    * bash: download and unzip [Funz-Bash.zip](https://github.com/Funz/plugin-Bash/releases/latest)
+  * install simulation plugin:
+    * Python: `Funz.installModel('Modelica')`
+    * R: `Funz::install.Model('Modelica')`
+    * bash: download and unzip [plugin-Modelica.zip](https://github.com/Funz/plugin-Modelica/releases/latest)
+  * launch basic calculation:
+    * Python: `Funz.Run(model="Modelica",input_files="samples/NewtonCooling.mo")`
+    * R: `Funz::Run(model="Modelica",input.files="samples/NewtonCooling.mo")`
+    * bash/cmd.exe: `./Funz.sh Run -m Modelica -if samples/NewtonCooling.mo` or `./Funz.bat Run -m Modelica -if samples/NewtonCooling.mo` 
 
 ### Autostart backend
 
@@ -136,8 +145,14 @@ The script 'Funz/FunzDaemon_won.sh' ("Wake on Network") is dedicated to wakeup t
 
   * on the __front node__, just start `Funz/FunzDaemon_won.sh`
   * on your computer, before and after launching Funz, just wake and sleep the backend using:
-    ```
+    ```bash
     echo "hi"| curl -m 1 telnet://frontnode:19000
     ./Funz.sh Run -m Modelica -if samples/NewtonCooling.mo
+    echo "bye"| curl -m 1 telnet://frontnode:19000
+    ```
+    or
+    ```batch
+    echo "hi"| curl -m 1 telnet://frontnode:19000
+    ./Funz.bat Run -m Modelica -if samples/NewtonCooling.mo
     echo "bye"| curl -m 1 telnet://frontnode:19000
     ```
