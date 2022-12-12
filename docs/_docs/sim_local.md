@@ -29,6 +29,8 @@ Assuming that the simulation software (say Modelica, our standard example) is al
 
   You can now check that your computer is well setup by running basic example:
 
-  * Python: `Funz.Run(model="Modelica",input_files="samples/NewtonCooling.mo")`
-  * R: `Funz::Run(model="Modelica",input.files="samples/NewtonCooling.mo")`
-  * bash/cmd.exe: `./Funz.sh Run -m Modelica -if samples/NewtonCooling.mo` or `./Funz.bat Run -m Modelica -if samples/NewtonCooling.mo` 
+  *  check that you well receive network Funz heartbeats: `nc -lu 19001` or `socat -u udp-recv:19001`
+  *  launch basic calculation:
+    * Python: `Funz.Run(model="Modelica",input_files="samples/NewtonCooling.mo")`
+    * R: `Funz::Run(model="Modelica",input.files="samples/NewtonCooling.mo")`
+    * bash/cmd.exe: `./Funz.sh Run -m Modelica -if samples/NewtonCooling.mo` or `./Funz.bat Run -m Modelica -if samples/NewtonCooling.mo` 

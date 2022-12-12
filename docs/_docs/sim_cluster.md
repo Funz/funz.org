@@ -43,9 +43,11 @@ On a __shared path__ between computing and front nodes:
 
   You can now check that these computers are well setup by running basic example on your own, that will use one of the local network computers:
 
-  * Python: `Funz.Run(model="Modelica",input_files="samples/NewtonCooling.mo")`
-  * R: `Funz::Run(model="Modelica",input.files="samples/NewtonCooling.mo")`
-  * bash: `./Funz.sh Run -m Modelica -if samples/NewtonCooling.mo`
+  *  check that you well receive network Funz heartbeats: `nc -lu 19001` or `socat -u udp-recv:19001`
+  *  launch basic calculation:
+    * Python: `Funz.Run(model="Modelica",input_files="samples/NewtonCooling.mo")`
+    * R: `Funz::Run(model="Modelica",input.files="samples/NewtonCooling.mo")`
+    * bash: `./Funz.sh Run -m Modelica -if samples/NewtonCooling.mo`
 
 
 ## 2. Backend + Funz on __front node__
@@ -79,9 +81,11 @@ On the front node:
 
   You can now check that the backend is well setup by running basic example:
 
-  * Python: `Funz.Run(model="Modelica",input_files="samples/NewtonCooling.mo")`
-  * R: `Funz::Run(model="Modelica",input.files="samples/NewtonCooling.mo")`
-  * bash: `./Funz.sh Run -m Modelica -if samples/NewtonCooling.mo`
+  *  check that you well receive network Funz heartbeats: `nc -lu 19001` or `socat -u udp-recv:19001`
+  *  launch basic calculation:
+    * Python: `Funz.Run(model="Modelica",input_files="samples/NewtonCooling.mo")`
+    * R: `Funz::Run(model="Modelica",input.files="samples/NewtonCooling.mo")`
+    * bash: `./Funz.sh Run -m Modelica -if samples/NewtonCooling.mo`
 
 
 ## 3. Backend on __front node__ + Funz on __computer__
@@ -126,7 +130,8 @@ On the front node:
 
   You can now check that the backend is well setup by running basic example from your computer (ie. not in cluster):
 
-* intall Funz: 
+  *  check that you well receive network Funz heartbeats: `nc -lu 19001` or `socat -u udp-recv:19001` 
+  * intall Funz: 
     * Python: `pip install Funz`, then `import Funz`
     * R: `remotes::install_github('Funz/Funz.R')`, then `library(Funz)`
     * bash: download and unzip [Funz-Bash.zip](https://github.com/Funz/plugin-Bash/releases/latest)
