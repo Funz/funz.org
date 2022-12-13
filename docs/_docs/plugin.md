@@ -70,19 +70,19 @@ These steps will guide you to build a basic plugin, which is sufficient for most
   * choose the formula syntax and replace `@{` and `}` (`@` should be replaced by a reserved character unused in the code syntax)
   * change the comment character `#` by the one used in your code syntax
   * provide a (small & simple) typical input file, containing some parameters
-```
-...
-... $(x1) ...
-... $(x2) ...
-...
-```
+    ```
+    ...
+    ... $(x1) ...
+    ... $(x2) ...
+    ...
+    ```
   * manually replace 'x1' and 'x2', and run this file with your simulation code to get the output files
   * select the main output files containing interest values (eg. by their extension), and give some sample:
-```
-...
-z= ...
-...
-```
+    ```
+    ...
+    z= ...
+    ...
+    ```
   * describe what output values are read
 4. According to previous choices, rename and implement the __'src/main/io/MyPlugin.ioplugin'__ file:
     ```
@@ -92,7 +92,7 @@ z= ...
     formulaLimit={...}
     commentLineChar=#
     ```
-5. Rename and adapt the shell script to launch the code __'src/main/scripts/MyPlugin.sh'__ and/or __'src/main/scripts/MyPlugin.bat'__. The script should support these features:
+5. Rename and adapt the shell script to launch the code __'src/main/scripts/MyPlugin.sh'__ and/or __'src/main/scripts/MyPlugin.bat'__. The script should support these features (see [this script]({{ "/docs/launch_script/" | prepend: site.baseurl }}) for an advanced example):
   * environment variables setting needed for code running,
   * pre-processing of running directory, for instance create directory, move files insides, apply `dos2unix` command on input files,
   * emulation of graphical display and interaction (using `Xvfb` and `xdotool`)
@@ -100,7 +100,7 @@ z= ...
   * cleaning of directory after calculation is done to suppress big files,
   * support for efficient kill running calculation (in case the connected front-end ask for):
     * if your script creates a 'PID' file, all integers written inside will be used as arguments for `taskkill` or `kill -9` commands,
-    * if your script creates a 'KILL.bat' or 'KILL.sh 'file, it will be launched.
+    * if your script creates a 'KILL.bat' or 'KILL.sh' file, it will be launched.
 6. Provide (at least) one __non-parametric__ test case in __'src/test/cases/MyTestCase.in/'__, containing all input files of this test case (without any parameter), including the main file which is passed as first argument to the '.sh' script:
   * then, launch the simulation on all test cases (one in each 'src/test/cases/' subdirectory)
         - possibly by calling `ant run-reference-cases` (which will use the previous script),
@@ -123,12 +123,12 @@ z= ...
     ```
     Note that `output.XXX.get=` syntax is a pipe suite expression wich API is given in [plugin API](../io_parser/). In order to check these expressions, you can test instantly your plugin behavior using the `ant read-output-tests` and `ant parse-input-tests` from plugin directory.
   * Once stable, you can append the extracted output (from `ant read-output-tests` result) as new keys in __'info.txt'__:
-```
-...
-output.x=1.23
-output.y=4.56
-output.z=7.89
-```
+    ```
+    ...
+    output.x=1.23
+    output.y=4.56
+    output.z=7.89
+    ```
     so that this test case is now complete.
 8. Check all test cases using `ant test`, which returns a json report, and should __not__ finished by `FAILED`
 9. Provide some sample case files in __'src/main/samples/OneSample.in'__.

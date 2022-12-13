@@ -61,11 +61,11 @@ Each **HOST** element contains:
 Each **CODE** elements contain:
   * the __name of the code__ to launch,
   * the __shell command__ used to launch code:
-    * Using shell alias commands, even well configured in environment is highly discouraged, prefer a complete path call: ''/path/to/my/startup/script.sh'' instead
-    * It is often preferable to modify the startup script code to adapt it to Prometheus. For example, applying a dos2unix on the input files is often necessary to limit the problems of portability of data files
+    * Using shell alias commands, even well configured in environment is highly discouraged, prefer a complete path call: `/path/to/my/startup/script.sh` instead
+    * It is often preferable to modify the startup script code to adapt it to Funz. For example, applying a `dos2unix` on the input files is often necessary to limit the problems of portability of data files
   * [optionally] a backend 'cplugin' for better support of code startup, error, kill or running status report.
 
-Then, the calculator.xml file lists all hosts and codes in this format:
+Then, the 'calculator.xml' file lists all hosts and codes in this format:
 ```xml
 <CALCULATOR spool="/tmp" port="10000" timeout="3600">
    <HOST name="192.168.1.123" port="19001" />
