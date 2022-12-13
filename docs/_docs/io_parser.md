@@ -1,5 +1,5 @@
 ---
-title: Extension Plugins
+title: 'Plugin: output parser'
 permalink: /docs/io_parser/
 ---
 

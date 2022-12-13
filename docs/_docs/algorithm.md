@@ -10,20 +10,28 @@ It mainly provides some methods in [R](http://www.r-project.org) language to def
 
 [![algorithm cheatsheet]({{ site.baseurl }}/docs/Algorithm.png){:width="400}]({{ site.baseurl }}/docs/Algorithm.png)
 
-For now, following are available out-of-the-box:
+For now, following algorithms are available out-of-the-box:
 
-* Funz-Brent [![Funz-Brent](https://github.com/Funz/algorithm-Brent/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/algorithm-Brent/)
-* Funz-EGO [![Funz-EGO](https://github.com/Funz/algorithm-EGO/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/algorithm-EGO/)
-* Funz-GradientDescent [![Funz-GradientDescent](https://github.com/Funz/algorithm-GradientDescent/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/algorithm-GradientDescent/)
-* Funz-PSO [![Funz-PSO](https://github.com/Funz/algorithm-PSO/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/algorithm-PSO/)
-* Funz-RandomSampling [![Funz-RandomSampling](https://github.com/Funz/algorithm-RandomSampling/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/algorithm-RandomSampling/)
-* Funz-Sensitivity [![Funz-Sensitivity](https://github.com/Funz/algorithm-Sensitivity/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/algorithm-Sensitivity/)
-* Funz-NSGA2 [![Funz-NSGA2](https://github.com/Funz/algorithm-NSGA2/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/algorithm-NSGA2/)
+* Brent [![Funz-Brent](https://github.com/Funz/algorithm-Brent/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/algorithm-Brent/)
+* EGO [![Funz-EGO](https://github.com/Funz/algorithm-EGO/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/algorithm-EGO/)
+* GradientDescent [![Funz-GradientDescent](https://github.com/Funz/algorithm-GradientDescent/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/algorithm-GradientDescent/)
+* PSO [![Funz-PSO](https://github.com/Funz/algorithm-PSO/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/algorithm-PSO/)
+* RandomSampling [![Funz-RandomSampling](https://github.com/Funz/algorithm-RandomSampling/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/algorithm-RandomSampling/)
+* Sensitivity [![Funz-Sensitivity](https://github.com/Funz/algorithm-Sensitivity/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/algorithm-Sensitivity/)
+* NSGA2 [![Funz-NSGA2](https://github.com/Funz/algorithm-NSGA2/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/algorithm-NSGA2/)
 
 For conveniency, a [basic template](https://github.com/Funz/algorithm-template) is provided and should be used as a scratch project.
 
 
-## Implementation
+## Installation
+
+Once installed, Funz can integrate some more algorithms. 
+Python and R wrappers provide `install.Design('ALGORITHM')` methods to add one of the previously bundled.
+
+From scratch (when no bundle is available), you can add a new algorithm by hand just by copying file 'MyAlgorithm.R' inside 'Funz/plugins/doe/' directory.
+
+
+## Bundle implementation
 
 ### Requirements
 
@@ -68,7 +76,8 @@ These steps will guide you to build a basic algorithm, which is sufficient for m
     ```r
     #' first design building.
     #' @param algorithm object handling options, status, ...
-    #' @param d the number of variables all set in [0,1]
+    #' @param input the input variables and their properties (like min, max)
+    #' @param output the output targets names
     #' @return matrix of first design step
     getInitialDesign <- function(algorithm,input,output) {
         ...
@@ -79,7 +88,7 @@ These steps will guide you to build a basic algorithm, which is sufficient for m
     ```r
     #' iterated design building.
     #' @param algorithm object handling options, status, ...
-    #' @param X matrix of current doe variables (in [0,1])
+    #' @param X matrix of current doe variables
     #' @param Y matrix of current results
     #' @return matrix of next doe step
     getNextDesign <- function(algorithm,X,Y) {
@@ -89,9 +98,9 @@ These steps will guide you to build a basic algorithm, which is sufficient for m
     ```
   * fill the results renderer (with plots & string return):
     ```r
-    #' final analysis. All variables are set in [0,1].
+    #' final analysis.
     #' @param algorithm object handling options, status, ...
-    #' @param X matrix of current doe variables (in [0,1])
+    #' @param X matrix of current doe variables
     #' @param Y matrix of current results
     #' @return HTML string of analysis
     displayResults <- function(algorithm,X,Y) {
@@ -108,9 +117,8 @@ These steps will guide you to build a basic algorithm, which is sufficient for m
     # *.f : list of math properties. To be compared with algorithm results
     # [print.f] : method to print/plot the function for information
     
-    f = function(X) {
-        matrix(Vectorize(function(x) {cos(pi*x)})(X),ncol=1)
-    }
+    f = function(X) { return(cos(pi*x)) }
+    
     input.f = list(
         x=list(min=0,max=1)
     )

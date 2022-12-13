@@ -8,28 +8,46 @@ permalink: /docs/plugin/
 Funz model 'plugin' is the component that features funz to interact with all external simulation software.
 It mainly provides input/output parsing and launch scripts, but can also (optionally) provides a way to follow simulations progress, failover support, ...
 
-For now, following are available out-of-the-box:
+For now, following plugins are available out-of-the-box:
 
-* Funz-Bash [![Funz-Bash](https://github.com/Funz/plugin-Bash/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Bash/)
-* Funz-Cast3m [![Funz-Cast3m](https://github.com/Funz/plugin-Cast3m/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Cast3m/)
-* Funz-Cmd.exe [![Funz-Cmd.exe](https://github.com/Funz/plugin-Cmd.exe/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Cmd.exe/)
-* Funz-Cristal [![Funz-Cristal](https://github.com/Funz/plugin-Cristal/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Cristal/)
-* Funz-Excel [![Funz-Excel](https://github.com/Funz/plugin-Excel/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Excel/)
-* Funz-Jupyter [![Funz-Jupyter](https://github.com/Funz/plugin-Jupyter/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Jupyter/)
-* Funz-MCNP [![Funz-MCNP](https://github.com/Funz/plugin-MCNP/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-MCNP/)
-* Funz-Modelica [![Funz-Modelica](https://github.com/Funz/plugin-Modelica/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Modelica/)
-* Funz-Moret [![Funz-Moret](https://github.com/Funz/plugin-Moret/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Moret/)
-* Funz-Python [![Funz-Python](https://github.com/Funz/plugin-Python/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Python/)
-* Funz-R [![Funz-R](https://github.com/Funz/plugin-R/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-R/)
-* Funz-Rmd [![Funz-Rmd](https://github.com/Funz/plugin-Rmd/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Rmd/)
-* Funz-Scale [![Funz-Scale](https://github.com/Funz/plugin-Scale/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Scale/)
-* Funz-Telemac [![Funz-Telemac](https://github.com/Funz/plugin-Telemac/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Telemac/)
-* Funz-VBS [![Funz-VBS](https://github.com/Funz/plugin-VBS/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-VBS/)
+* Bash [![Funz-Bash](https://github.com/Funz/plugin-Bash/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Bash/)
+* Cast3m [![Funz-Cast3m](https://github.com/Funz/plugin-Cast3m/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Cast3m/)
+* Cmd.exe [![Funz-Cmd.exe](https://github.com/Funz/plugin-Cmd.exe/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Cmd.exe/)
+* Cristal [![Funz-Cristal](https://github.com/Funz/plugin-Cristal/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Cristal/)
+* Excel [![Funz-Excel](https://github.com/Funz/plugin-Excel/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Excel/)
+* Jupyter [![Funz-Jupyter](https://github.com/Funz/plugin-Jupyter/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Jupyter/)
+* MCNP [![Funz-MCNP](https://github.com/Funz/plugin-MCNP/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-MCNP/)
+* Modelica [![Funz-Modelica](https://github.com/Funz/plugin-Modelica/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Modelica/)
+* Moret [![Funz-Moret](https://github.com/Funz/plugin-Moret/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Moret/)
+* Python [![Funz-Python](https://github.com/Funz/plugin-Python/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Python/)
+* R [![Funz-R](https://github.com/Funz/plugin-R/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-R/)
+* Rmd [![Funz-Rmd](https://github.com/Funz/plugin-Rmd/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Rmd/)
+* Scale [![Funz-Scale](https://github.com/Funz/plugin-Scale/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Scale/)
+* Telemac [![Funz-Telemac](https://github.com/Funz/plugin-Telemac/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Telemac/)
+* VBS [![Funz-VBS](https://github.com/Funz/plugin-VBS/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-VBS/)
 
 For convenience, a [basic template](https://github.com/Funz/plugin-template) is provided and should be used as a scratch project.
 
+## Installation
 
-## Implementation
+Once installed, Funz can integrate some more plugins. 
+Python and R wrappers provide `install.Model('CODENAME')` methods to add one of the previously bundled.
+
+From scratch (when no bundle is available), you can add a new plugin by hand:
+
+* on the backend side:
+  * if an [optional] extension (a **.cplugin.jar** file) can provide dedicated methods to launch, stop, and report progress of a given calculation with a code, put the **.cplugin.jar** file inside the Funz installation path, in **plugins/calc** directory,
+  * **update** the '**calculator.xml**' XML file: add the line (replacing CODENAME)
+    ```xml
+    <CODE name="CODENAME" cplugin="file:./plugins/calc/CODENAME.cplugin.jar" command="/PATH/TO/CODE/SCRIPT" />
+    ```
+  * wait 5 seconds for automatic update of backend,
+* on the frontend side:
+  * put the 'CODENAME.ioplugin' file in 'Funz/plugins/io/' directory (see following section about impl.),
+  * restart frontend
+
+
+## Bundle implementation
 
 ### Requirements
 
@@ -74,7 +92,15 @@ z= ...
     formulaLimit={...}
     commentLineChar=#
     ```
-5. Rename and adapt the shell script to launch the code __'src/main/scripts/MyPlugin.sh'__ and/or __'src/main/scripts/MyPlugin.bat'__,
+5. Rename and adapt the shell script to launch the code __'src/main/scripts/MyPlugin.sh'__ and/or __'src/main/scripts/MyPlugin.bat'__. The script should support these features:
+  * environment variables setting needed for code running,
+  * pre-processing of running directory, for instance create directory, move files insides, apply `dos2unix` command on input files,
+  * emulation of graphical display and interaction (using `Xvfb` and `xdotool`)
+  * post-processing of code output for easier parsing by Funz (`grep`, `awk`, `sed`),
+  * cleaning of directory after calculation is done to suppress big files,
+  * support for efficient kill running calculation (in case the connected front-end ask for):
+    * if your script creates a 'PID' file, all integers written inside will be used as arguments for `taskkill` or `kill -9` commands,
+    * if your script creates a 'KILL.bat' or 'KILL.sh 'file, it will be launched.
 6. Provide (at least) one __non-parametric__ test case in __'src/test/cases/MyTestCase.in/'__, containing all input files of this test case (without any parameter), including the main file which is passed as first argument to the '.sh' script:
   * then, launch the simulation on all test cases (one in each 'src/test/cases/' subdirectory)
         - possibly by calling `ant run-reference-cases` (which will use the previous script),
