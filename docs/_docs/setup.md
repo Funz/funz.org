@@ -9,9 +9,9 @@ To enable network connection between backend services and all users frontend, th
   * discovery/heartbeat feature:
     * on backend computers/clusters/...: open **19001-19004 outgoing UDP** ports,
     * on frontend computers: open **19001-19004 incoming UDP** ports,
-    * once running on backend, you can check frontend receives heartbeats with:
-      * netcat: `nc -lu 19001`
-      * socat: `socat -u udp-recv:19001 -`
+    * to check heartbeat is well routed from backend to frontend, you can try to send a short message:
+      * from backend, start 'FunzDaemon.sh' or send a message with netcat: `nc -u $frontend_ip 19001`
+      * from frontend receive message (or regular heartbeats) with netcat: `nc -lu 19001` (or socat: `socat -u udp-recv:19001 -`)
   * data transfer: 
     * on backend computers/clusters/...: **all incoming** (easier, if possible), or one specified in 'calculator.xml' **TCP** port (see below)
     * on frontend computers: open **all outgoing** (easier, if possible), or one specified in 'calculator.xml' **TCP** port (see below)
