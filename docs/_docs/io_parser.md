@@ -18,8 +18,16 @@ Note that expressions are designed following:
 * __Piping__: first argument is in fact the result of previous function (if it exists)_
 * __Vectorization__: _`List<...>` are processed by later function iteratively_
 
+<hr/>
+Once setup, it is recommended to test your expression against output files/directory using such inline testing:
 
-The built-in functions available in the parser are the following (`grep "public static" ../funz-core/src/main/java/org/funz/util/Parser.java`), providing following features:
+```bash
+java -cp .../Funz/lib/funz-client-1.15.jar IOPluginParserEval <ParserExpressionChain> <path1> <path2> <path3> ...
+```
+<hr/>
+
+
+All built-in functions available in the parser are the following (`grep "public static" ../funz-core/src/main/java/org/funz/util/Parser.java`), providing following features:
 
 * reading standard format files:
   * __unzip__: `List<File> unzip(File z)`
