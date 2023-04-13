@@ -21,9 +21,14 @@ Note that expressions are designed following:
 <hr/>
 Once setup, it is recommended to test your expression against output files/directory using such inline testing:
 
-```bash
-java -cp .../Funz/lib/funz-client-1.15.jar IOPluginParserEval <ParserExpressionChain> <path1> <path2> <path3> ...
-```
+* from bash:
+    ```bash
+    java -cp ./Funz/lib/funz-client-1.15.jar:./Funz/lib/funz-core-1.15.jar org.funz.ioplugin.IOPluginParserEval '<ParserExpressionChain>' <path1> <path2> <path3> ...
+    ```
+* from cmd.exe:
+    ```bash
+    java -cp .\Funz\lib\funz-client-1.15.jar;.\Funz\lib\funz-core-1.15.jar org.funz.ioplugin.IOPluginParserEval '<ParserExpressionChain>' <path1> <path2> <path3> ...
+    ```
 <hr/>
 
 
