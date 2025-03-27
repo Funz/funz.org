@@ -36,7 +36,9 @@ All built-in functions available in the parser are the following (`grep "public 
 
 * reading standard format files:
   * __unzip__: `List<File> unzip(File z)`
-  * __CSV__: `List<String> CSV(List<String> lines, String delim, String title)`
+  * __CSV__: 
+    * `List<String> CSV(List<String> lines, String coldelim, String column)`
+    * `Map<String,double[]> CSV(List<String> lines, String coldelim)`
   * __JSON__: `String JSONPath(File file, String path)`
   * __XML__: 
     * `String XPath(File file, String path)`
@@ -51,6 +53,11 @@ All built-in functions available in the parser are the following (`grep "public 
     * `List<String> grep(BufferedReader inn, String keyfilter)`
     * `List<String> grep_basic(BufferedReader inn, String keyfilter)`
     * `List<String> gnotrep(BufferedReader inn, String keyfilter)`
+    * `List<String> grep_basic(File file, String keyfilter)`
+    * `List<String> grep_after(BufferedReader inn, String keyfilter, int linesAfter)`
+    * `List<String> grep_after(File file, String keyfilter, int linesAfter)`
+    * `List<String> grep_basic_after(BufferedReader inn, String keyfilter, int linesAfter)`
+    * `List<String> grep_basic_after(File file, String keyfilter, int linesAfter)`
    * __test__:
      * `Boolean contains(File file, String keyfilter)`
      * `Boolean containsIn(String input, String keyfilter)`
@@ -62,9 +69,13 @@ All built-in functions available in the parser are the following (`grep "public 
     * `String strcat(String... lines)`
     * `String strcat(LinkedList lines)`
     * `String cat(List lines, String separator)`
-  * `List<String> merge(List lines)`
-  * `int length(String line)`
-  * `List<Integer> length(List<String> lines)`
+    * `String concatString(Object o1, Object o2)`
+    * `String concatString(String string1, String string2)`
+  * __conversion__:
+    * `String asString(HashMap o)`
+    * `String asString(Object o)`
+    * `String toString(List o)`
+    * `String toString(Object o)`
   * __trim__:
     * `String trim(String line)`
     * `List<String> trim(List<String> lines)`
@@ -93,6 +104,12 @@ All built-in functions available in the parser are the following (`grep "public 
     * `List<String> replace(List<String> lines, String toreplace, String replacer)`
     * `String replace_regexp(String line, String toreplace, String replacer)`
     * `List<String> replace_regexp(List<String> lines, String toreplace, String replacer)`
+  * __others__:
+    * `List<String> merge(List lines)`
+    * `int length(String line)`
+    * `List<Integer> length(List<String> lines)`
+    * `String unquote(String line)`
+    * `List<String> unquote(List<String> lines)`
 * __indexes__:
   * `List<String> get(List<String> lines, int... numbers)`
   * `List<String> getAfter(List<String> lines, int after, int... numbers)`
@@ -101,6 +118,9 @@ All built-in functions available in the parser are the following (`grep "public 
   * `List<String> getBy(List<String> lines, int start, int step)`
   * `List<String> getBy(List<String> lines, int start, int step, int end)`
   * `List<String> getAll(List<List<String>> lines, int i)`
+  * `List<String> head(List<String> lines, int l)`
+  * `List<String> tail(List<String> lines, int l)`
+  * `List<String> skip(List<String> lines, int skip)`
 * __basic math__:  
   * `double times(double d, double t)`
   * `double[] times(double[] d, double t)`
@@ -108,6 +128,8 @@ All built-in functions available in the parser are the following (`grep "public 
 * __casting to numeric__:
   * `double asNumeric(String line)`
   * `double asNumeric(List line)`
+  * `double asNumeric(boolean boolValue)`
+  * `double asNumeric(Boolean boolValue)`
   * `double[] asNumeric1DArray(String line, String delim)`
   * `double[] asNumeric1DArray(String line)`
   * `double[] asNumeric1DArray(List<String> lines)`
@@ -115,3 +137,14 @@ All built-in functions available in the parser are the following (`grep "public 
   * `double[][] asNumeric2DArray(String line)`
   * `double[][] asNumeric2DArray(List<String> lines, String coldelim)`
   * `double[][] asNumeric2DArray(List<String> lines)`
+  * `int doubleToInt(double d)`
+
+In addition to the built-in functions listed above, all methods from the `java.lang` package are also available for use. This includes commonly used methods such as:
+
+* `Integer.parseInt(String s)`
+* `Double.parseDouble(String s)`
+* `String.valueOf(Object obj)`
+* `Math.abs(double a)`
+* `Math.pow(double a, double b)`
+
+These methods can be seamlessly integrated into your expression chains to enhance functionality.
